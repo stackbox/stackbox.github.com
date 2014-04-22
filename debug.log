@@ -1,0 +1,324 @@
+date: 2014-04-22 20:21:47.462
+argv: d:\Program Files\nodejs\node.exe c:\Users\Saber\AppData\Roaming\npm\node_modules\hexo\bin\hexo server
+os: Windows_NT 6.2.9200 win32 x64
+version:
+  hexo: 2.4.5
+  http_parser: 1.0
+  node: 0.10.25
+  v8: 3.14.5.9
+  ares: 1.9.0-DEV
+  uv: 0.10.23
+  zlib: 1.2.3
+  modules: 11
+  openssl: 1.0.1e
+---
+
+[debug] 20:09:26.811 Configuration file load successfully
+[debug] 20:09:26.816 Version info checked successfully
+[debug] 20:09:26.882 Loading database.
+[debug] 20:09:26.957 Plugin loaded successfully: hexo-generator-feed
+[debug] 20:09:26.982 Plugin loaded successfully: hexo-generator-sitemap
+[debug] 20:09:26.987 Script load successfully: fancybox.js
+[debug] 20:09:27.014 Theme layout loaded
+[debug] 20:09:27.025 Theme configuration loaded
+[debug] 20:09:27.069 Theme source loaded
+[debug] 20:09:27.073 Theme language files loaded
+[debug] 20:09:27.122 Processed: about/index.md
+[debug] 20:09:27.130 Processed: _posts/vagrant-using.md
+[debug] 20:09:27.143 Cache saved
+[info] 20:09:27.166 Hexo is running at localhost:4000/. Press Ctrl+C to stop.
+[debug] 20:09:31.051 Render index: 
+[debug] 20:10:39.665 Render index: 
+[debug] 20:11:04.081 Render post: 2014/03/28/vagrant-using/
+[create] 20:16:14.226 Theme: .subl92c.tmp
+[create] 20:16:14.231 Theme: .subl92c.tmp
+[update] 20:16:14.296 Theme: .subl92c.tmp
+[delete] 20:16:14.299 Theme: _config.yml
+[update] 20:16:14.302 Theme: .subl92c.tmp
+[update] 20:16:14.306 Theme: _config.yml
+[update] 20:16:14.307 Theme: _config.yml
+[update] 20:16:14.308 Theme: _config.yml
+[delete] 20:16:14.311 Theme: .subl92c.tmp
+[create] 20:16:14.318 Theme: _config.yml
+[create] 20:16:14.320 Theme: _config.yml
+[create] 20:16:14.325 Theme: _config.yml
+[create] 20:16:14.331 Theme: _config.yml
+[create] 20:16:14.334 Theme: _config.yml
+[create] 20:16:14.336 Theme: _config.yml
+[create] 20:16:14.337 Theme: _config.yml
+[debug] 20:16:14.448 Theme configuration loaded
+[debug] 20:16:14.451 Theme configuration loaded
+[debug] 20:16:14.453 Theme configuration loaded
+[debug] 20:16:14.456 Theme configuration loaded
+[debug] 20:16:14.461 Theme configuration loaded
+[debug] 20:16:14.463 Theme configuration loaded
+[debug] 20:16:14.472 Theme configuration loaded
+[debug] 20:16:14.475 Theme configuration loaded
+[debug] 20:16:14.477 Theme configuration loaded
+[debug] 20:16:14.479 Theme configuration loaded
+[create] 20:16:17.563 Theme: .subla80.tmp
+[create] 20:16:17.566 Theme: .subla80.tmp
+[update] 20:16:17.647 Theme: .subla80.tmp
+[update] 20:16:17.650 Theme: .subla80.tmp
+[update] 20:16:17.655 Theme: _config.yml
+[update] 20:16:17.661 Theme: _config.yml
+[update] 20:16:17.663 Theme: _config.yml
+[update] 20:16:17.665 Theme: _config.yml
+[update] 20:16:17.667 Theme: _config.yml
+[update] 20:16:17.668 Theme: _config.yml
+[delete] 20:16:17.670 Theme: .subla80.tmp
+[create] 20:16:18.095 Theme: .subl87e.tmp
+[create] 20:16:18.097 Theme: .subl87e.tmp
+[update] 20:16:18.177 Theme: .subl87e.tmp
+[delete] 20:16:18.179 Theme: _config.yml
+[update] 20:16:18.180 Theme: .subl87e.tmp
+[update] 20:16:18.184 Theme: _config.yml
+[update] 20:16:18.186 Theme: _config.yml
+[update] 20:16:18.187 Theme: _config.yml
+[update] 20:16:18.188 Theme: _config.yml
+[update] 20:16:18.190 Theme: _config.yml
+[update] 20:16:18.191 Theme: _config.yml
+[delete] 20:16:18.192 Theme: .subl87e.tmp
+[create] 20:16:18.201 Theme: _config.yml
+[create] 20:16:18.207 Theme: _config.yml
+[create] 20:16:18.214 Theme: _config.yml
+[create] 20:16:18.215 Theme: _config.yml
+[create] 20:16:18.217 Theme: _config.yml
+[create] 20:16:18.218 Theme: _config.yml
+[create] 20:16:18.220 Theme: _config.yml
+[create] 20:16:18.316 Theme: .subl6c5.tmp
+[create] 20:16:18.317 Theme: .subl6c5.tmp
+[update] 20:16:18.346 Theme: .subl6c5.tmp
+[delete] 20:16:18.348 Theme: _config.yml
+[update] 20:16:18.350 Theme: .subl6c5.tmp
+[update] 20:16:18.355 Theme: _config.yml
+[update] 20:16:18.357 Theme: _config.yml
+[update] 20:16:18.358 Theme: _config.yml
+[update] 20:16:18.360 Theme: _config.yml
+[update] 20:16:18.361 Theme: _config.yml
+[update] 20:16:18.363 Theme: _config.yml
+[update] 20:16:18.365 Theme: _config.yml
+[update] 20:16:18.367 Theme: _config.yml
+[update] 20:16:18.368 Theme: _config.yml
+[delete] 20:16:18.370 Theme: .subl6c5.tmp
+[create] 20:16:18.384 Theme: _config.yml
+[create] 20:16:18.386 Theme: _config.yml
+[create] 20:16:18.387 Theme: _config.yml
+[create] 20:16:18.388 Theme: _config.yml
+[create] 20:16:18.390 Theme: _config.yml
+[create] 20:16:18.391 Theme: _config.yml
+[create] 20:16:18.393 Theme: _config.yml
+[create] 20:16:24.351 Theme: .subl899.tmp
+[create] 20:16:24.355 Theme: .subl899.tmp
+[update] 20:16:24.426 Theme: .subl899.tmp
+[delete] 20:16:24.428 Theme: _config.yml
+[update] 20:16:24.430 Theme: .subl899.tmp
+[update] 20:16:24.433 Theme: _config.yml
+[update] 20:16:24.435 Theme: _config.yml
+[update] 20:16:24.437 Theme: _config.yml
+[update] 20:16:24.438 Theme: _config.yml
+[update] 20:16:24.439 Theme: _config.yml
+[update] 20:16:24.441 Theme: _config.yml
+[update] 20:16:24.442 Theme: _config.yml
+[update] 20:16:24.444 Theme: _config.yml
+[update] 20:16:24.446 Theme: _config.yml
+[update] 20:16:24.447 Theme: _config.yml
+[update] 20:16:24.448 Theme: _config.yml
+[update] 20:16:24.450 Theme: _config.yml
+[delete] 20:16:24.451 Theme: .subl899.tmp
+[create] 20:16:24.463 Theme: _config.yml
+[create] 20:16:24.465 Theme: _config.yml
+[create] 20:16:24.467 Theme: _config.yml
+[create] 20:16:24.468 Theme: _config.yml
+[create] 20:16:24.469 Theme: _config.yml
+[create] 20:16:24.471 Theme: _config.yml
+[create] 20:16:24.472 Theme: _config.yml
+[create] 20:16:24.588 Theme: .sublcd5.tmp
+[create] 20:16:24.589 Theme: .sublcd5.tmp
+[update] 20:16:24.636 Theme: .sublcd5.tmp
+[update] 20:16:24.640 Theme: .sublcd5.tmp
+[update] 20:16:24.644 Theme: _config.yml
+[update] 20:16:24.645 Theme: _config.yml
+[update] 20:16:24.647 Theme: _config.yml
+[update] 20:16:24.648 Theme: _config.yml
+[update] 20:16:24.649 Theme: _config.yml
+[update] 20:16:24.651 Theme: _config.yml
+[update] 20:16:24.652 Theme: _config.yml
+[update] 20:16:24.654 Theme: _config.yml
+[update] 20:16:24.656 Theme: _config.yml
+[delete] 20:16:24.659 Theme: .sublcd5.tmp
+[update] 20:16:24.660 Theme: _config.yml
+[update] 20:16:24.661 Theme: _config.yml
+[update] 20:16:24.668 Theme: _config.yml
+[update] 20:16:24.676 Theme: _config.yml
+[update] 20:16:24.677 Theme: _config.yml
+[update] 20:16:24.679 Theme: _config.yml
+[create] 20:16:24.860 Theme: .subl3e9.tmp
+[create] 20:16:24.862 Theme: .subl3e9.tmp
+[update] 20:16:24.881 Theme: .subl3e9.tmp
+[delete] 20:16:24.883 Theme: _config.yml
+[update] 20:16:24.884 Theme: .subl3e9.tmp
+[update] 20:16:24.888 Theme: _config.yml
+[update] 20:16:24.889 Theme: _config.yml
+[update] 20:16:24.891 Theme: _config.yml
+[update] 20:16:24.893 Theme: _config.yml
+[update] 20:16:24.894 Theme: _config.yml
+[update] 20:16:24.895 Theme: _config.yml
+[update] 20:16:24.897 Theme: _config.yml
+[update] 20:16:24.899 Theme: _config.yml
+[update] 20:16:24.900 Theme: _config.yml
+[update] 20:16:24.902 Theme: _config.yml
+[update] 20:16:24.903 Theme: _config.yml
+[update] 20:16:24.904 Theme: _config.yml
+[update] 20:16:24.914 Theme: _config.yml
+[update] 20:16:24.918 Theme: _config.yml
+[update] 20:16:24.924 Theme: _config.yml
+[delete] 20:16:24.925 Theme: .subl3e9.tmp
+[create] 20:16:24.936 Theme: _config.yml
+[create] 20:16:24.938 Theme: _config.yml
+[create] 20:16:24.940 Theme: _config.yml
+[create] 20:16:24.943 Theme: _config.yml
+[create] 20:16:24.945 Theme: _config.yml
+[create] 20:16:24.947 Theme: _config.yml
+[create] 20:16:24.948 Theme: _config.yml
+[create] 20:16:25.108 Theme: .subl80.tmp
+[create] 20:16:25.109 Theme: .subl80.tmp
+[update] 20:16:25.150 Theme: .subl80.tmp
+[delete] 20:16:25.151 Theme: _config.yml
+[update] 20:16:25.153 Theme: .subl80.tmp
+[update] 20:16:25.156 Theme: _config.yml
+[update] 20:16:25.158 Theme: _config.yml
+[update] 20:16:25.159 Theme: _config.yml
+[update] 20:16:25.161 Theme: _config.yml
+[update] 20:16:25.162 Theme: _config.yml
+[update] 20:16:25.163 Theme: _config.yml
+[update] 20:16:25.165 Theme: _config.yml
+[update] 20:16:25.166 Theme: _config.yml
+[update] 20:16:25.168 Theme: _config.yml
+[update] 20:16:25.170 Theme: _config.yml
+[update] 20:16:25.171 Theme: _config.yml
+[update] 20:16:25.172 Theme: _config.yml
+[update] 20:16:25.173 Theme: _config.yml
+[update] 20:16:25.180 Theme: _config.yml
+[update] 20:16:25.187 Theme: _config.yml
+[update] 20:16:25.188 Theme: _config.yml
+[update] 20:16:25.190 Theme: _config.yml
+[update] 20:16:25.191 Theme: _config.yml
+[delete] 20:16:25.192 Theme: .subl80.tmp
+[create] 20:16:25.201 Theme: _config.yml
+[create] 20:16:25.203 Theme: _config.yml
+[create] 20:16:25.204 Theme: _config.yml
+[create] 20:16:25.206 Theme: _config.yml
+[create] 20:16:25.207 Theme: _config.yml
+[create] 20:16:25.209 Theme: _config.yml
+[create] 20:16:25.212 Theme: _config.yml
+[create] 20:20:39.767 Theme: .subldb2.tmp
+[create] 20:20:39.771 Theme: .subldb2.tmp
+[update] 20:20:39.838 Theme: .subldb2.tmp
+[delete] 20:20:39.840 Theme: _config.yml
+[update] 20:20:39.842 Theme: .subldb2.tmp
+[update] 20:20:39.846 Theme: _config.yml
+[update] 20:20:39.852 Theme: _config.yml
+[update] 20:20:39.853 Theme: _config.yml
+[update] 20:20:39.855 Theme: _config.yml
+[update] 20:20:39.858 Theme: _config.yml
+[update] 20:20:39.859 Theme: _config.yml
+[update] 20:20:39.861 Theme: _config.yml
+[update] 20:20:39.863 Theme: _config.yml
+[update] 20:20:39.864 Theme: _config.yml
+[update] 20:20:39.879 Theme: _config.yml
+[update] 20:20:39.881 Theme: _config.yml
+[update] 20:20:39.883 Theme: _config.yml
+[update] 20:20:39.886 Theme: _config.yml
+[update] 20:20:39.887 Theme: _config.yml
+[update] 20:20:39.889 Theme: _config.yml
+[delete] 20:20:39.891 Theme: .subldb2.tmp
+[update] 20:20:39.893 Theme: _config.yml
+[update] 20:20:39.895 Theme: _config.yml
+[update] 20:20:39.897 Theme: _config.yml
+[update] 20:20:39.904 Theme: _config.yml
+[update] 20:20:39.912 Theme: _config.yml
+[update] 20:20:39.914 Theme: _config.yml
+[create] 20:20:39.925 Theme: _config.yml
+[create] 20:20:39.926 Theme: _config.yml
+[create] 20:20:39.928 Theme: _config.yml
+[create] 20:20:39.929 Theme: _config.yml
+[create] 20:20:39.931 Theme: _config.yml
+[create] 20:20:39.932 Theme: _config.yml
+[create] 20:20:39.934 Theme: _config.yml
+[create] 20:20:39.935 Theme: _config.yml
+[create] 20:20:40.410 Theme: .subl3ea.tmp
+[create] 20:20:40.412 Theme: .subl3ea.tmp
+[update] 20:20:40.493 Theme: .subl3ea.tmp
+[delete] 20:20:40.495 Theme: _config.yml
+[update] 20:20:40.497 Theme: .subl3ea.tmp
+[update] 20:20:40.501 Theme: _config.yml
+[update] 20:20:40.502 Theme: _config.yml
+[update] 20:20:40.504 Theme: _config.yml
+[update] 20:20:40.506 Theme: _config.yml
+[update] 20:20:40.507 Theme: _config.yml
+[update] 20:20:40.508 Theme: _config.yml
+[update] 20:20:40.509 Theme: _config.yml
+[update] 20:20:40.511 Theme: _config.yml
+[update] 20:20:40.513 Theme: _config.yml
+[update] 20:20:40.515 Theme: _config.yml
+[update] 20:20:40.516 Theme: _config.yml
+[update] 20:20:40.518 Theme: _config.yml
+[update] 20:20:40.524 Theme: _config.yml
+[update] 20:20:40.529 Theme: _config.yml
+[update] 20:20:40.530 Theme: _config.yml
+[update] 20:20:40.532 Theme: _config.yml
+[update] 20:20:40.533 Theme: _config.yml
+[update] 20:20:40.534 Theme: _config.yml
+[update] 20:20:40.535 Theme: _config.yml
+[update] 20:20:40.537 Theme: _config.yml
+[update] 20:20:40.538 Theme: _config.yml
+[update] 20:20:40.539 Theme: _config.yml
+[update] 20:20:40.541 Theme: _config.yml
+[update] 20:20:40.542 Theme: _config.yml
+[delete] 20:20:40.543 Theme: .subl3ea.tmp
+[create] 20:20:40.550 Theme: _config.yml
+[create] 20:20:40.552 Theme: _config.yml
+[create] 20:20:40.554 Theme: _config.yml
+[create] 20:20:40.557 Theme: _config.yml
+[create] 20:20:40.561 Theme: _config.yml
+[create] 20:20:40.564 Theme: _config.yml
+[create] 20:20:40.566 Theme: _config.yml
+[error] 20:21:47.324 Error: watch ENOENT
+Error: watch ENOENT
+    at errnoException (fs.js:1019:11)
+    at FSWatcher.start (fs.js:1051:11)
+    at Object.fs.watch (fs.js:1076:11)
+    at EventEmitter.FSWatcher._watch (c:\Users\Saber\AppData\Roaming\npm\node_modules\hexo\node_modules\chokidar\index.js:250:18)
+    at EventEmitter.FSWatcher._handleFile (c:\Users\Saber\AppData\Roaming\npm\node_modules\hexo\node_modules\chokidar\index.js:270:8)
+    at c:\Users\Saber\AppData\Roaming\npm\node_modules\hexo\node_modules\chokidar\index.js:356:15
+    at Object.oncomplete (fs.js:107:15)
+
+[delete] 20:21:47.407 Theme: .subl3c9.tmp
+[update] 20:21:47.412 Theme: _config.yml
+[update] 20:21:47.413 Theme: _config.yml
+[update] 20:21:47.415 Theme: _config.yml
+[update] 20:21:47.416 Theme: _config.yml
+[update] 20:21:47.417 Theme: _config.yml
+[update] 20:21:47.419 Theme: _config.yml
+[update] 20:21:47.420 Theme: _config.yml
+[update] 20:21:47.421 Theme: _config.yml
+[update] 20:21:47.422 Theme: _config.yml
+[update] 20:21:47.423 Theme: _config.yml
+[update] 20:21:47.424 Theme: _config.yml
+[update] 20:21:47.425 Theme: _config.yml
+[update] 20:21:47.428 Theme: _config.yml
+[update] 20:21:47.429 Theme: _config.yml
+[update] 20:21:47.430 Theme: _config.yml
+[update] 20:21:47.431 Theme: _config.yml
+[update] 20:21:47.432 Theme: _config.yml
+[update] 20:21:47.433 Theme: _config.yml
+[update] 20:21:47.435 Theme: _config.yml
+[update] 20:21:47.436 Theme: _config.yml
+[update] 20:21:47.437 Theme: _config.yml
+[update] 20:21:47.438 Theme: _config.yml
+[update] 20:21:47.439 Theme: _config.yml
+[update] 20:21:47.440 Theme: _config.yml
+[update] 20:21:47.441 Theme: _config.yml
+[update] 20:21:47.442 Theme: _config.yml
+[update] 20:21:47.443 Theme: _config.yml
