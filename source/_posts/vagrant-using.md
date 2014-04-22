@@ -3,16 +3,16 @@ date: 2014-03-28 09:46:55
 tags:
 ---
 
-### Vagrant 虚拟机使用 ###
+## Vagrant 虚拟机使用 ##
 
 vagrant 是一款基于virtualbox的虚拟开发环境的工具，个人感觉风格上类似于docker,
 不过有国外大牛做出了这个[vagrant-docker](https://github.com/philspitler/vagrant-docker)项目,provider由virtualbox替换成了docker.
 
-### 安装 ###
+## 安装 ##
 + 安装 [VirtualBox-4.3.6-91406-Win.exe](http://download.virtualbox.org/virtualbox/4.3.6/VirtualBox-4.3.6-91406-Win.exe) 
 + 安装 [Vagrant_1.4.3.msi](http://966b.http.dal05.cdn.softlayer.net/data-production/1835e881651ac8f27a9e4b815754f1934db71fe6?filename=Vagrant_1.4.3.msi)
 
-### 配置 ##
+## 配置 ##
 + 从[www.vagrantbox.es](http://www.vagrantbox.es/)‎下载虚拟机，我们使用32位的ubuntu版本 [lucid32.box](http://files.vagrantup.com/lucid32.box)(这个是ubuntu10不推荐使用)
 
 + 将box文件拷贝到计算机的某个文件夹中，msys运行添加虚拟机命令
@@ -181,7 +181,7 @@ $ vagrant destroy
 $ ssh -p 2222 vagrant@localhost
 
 ```
-### 导出Box ###
+## 导出Box ##
 + 步骤
     1. cd into the directory with your __Vagrantile__
     2. run `vagrant package`· This will export a box file called package.box by default
@@ -191,7 +191,7 @@ $ ssh -p 2222 vagrant@localhost
 
  Now you can just create a new folder, run vagrant init as normal and set your box to the following:`config.vm.box = "foo"`,The new VM will spin up with the exact data that was present in the previous VM.
  
-### 时间同步 ###
+## 时间同步 ##
 
 把`virtualbox/bin`加入环境变量，运行一下命令，设置时间同步（win下也可）
 ```bash
@@ -212,7 +212,7 @@ $ VBoxManage setextradata <vm-name> VBoxInternal/Devices/VMMDev/0/Config/GetHost
 
 ```
 
-### 使用 ###
+## 使用 ##
 + 网络配置
     1.  较为常用是端口映射，就是将虚拟机中的端口映射到宿主机对应的端口直接使用 ，在Vagrantfile中配置：`config.vm.network :forwarded_port, guest: 80, host: 8080`,guest: 80 表示虚拟机中的80端口， host: 8080 表示映射到宿主机的8080端口
     2.  如果需要自己自由的访问虚拟机，但是别人不需要访问虚拟机， ，在Vagrantfile中配置：`config.vm.network :private_network, ip: "192.168.1.104"`,192.168.1.104表示虚拟机的IP，多台虚拟机的话需要互相访问的话，设置在相同网段即可
