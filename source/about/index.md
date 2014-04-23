@@ -10,7 +10,7 @@ A java web engineer in Xi'an.
 ##Like##
 + Java
 + Javascript & Node
-+ beautiful girl？Hahah... just kidding
++ beautiful girl？Hahah... only __兮琳CL__
 
 ##Contact##
 Find me via [Github](http://www.github.com/superalsrk) or [豆瓣](http://www.douban.com/people/superalsrk/)
