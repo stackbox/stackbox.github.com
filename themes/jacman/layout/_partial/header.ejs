@@ -18,7 +18,7 @@
 					<% } %>
 					<li><form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="search" name="q" id="search" autocomplete="off" maxlength="20" placeholder="Search" />
 						<input type="hidden" name="q" value="site:<%- config.url.replace(/^https?:\/\//, '') %>">
 					</form></li>
 				</ul>
