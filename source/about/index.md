@@ -10,7 +10,8 @@ A java web engineer in Xi'an.
 ##Like##
 + Java
 + Javascript & Node
-+ beautiful girl？Hahah... only __兮琳CL__
++ Concurrent programming using java/scala,Er.. I'm a zealot of jvm language.
++ Recently I'm trying to learn painting with Wacom and SAI, it's realy amazing.
 
 ##Contact##
 Find me via [Github](http://www.github.com/superalsrk) or [豆瓣](http://www.douban.com/people/superalsrk/)

@@ -1,6 +1,6 @@
 title: vagrant虚拟机使用
 date: 2014-03-28 09:46:55
-tags:
+tags: ['工具']
 ---
 
 ## Vagrant 虚拟机使用 ##
