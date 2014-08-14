@@ -1,45 +1,30 @@
-date: 2014-04-23 00:00:46.877
-argv: d:\Program Files\nodejs\node.exe c:\Users\Saber\AppData\Roaming\npm\node_modules\hexo\bin\hexo server
-os: Windows_NT 6.2.9200 win32 x64
-version:
-  hexo: 2.4.5
-  http_parser: 1.0
-  node: 0.10.25
+date: "2014-08-10 11:59:24.582"
+argv: "d:\\software\\nodejs\\node.exe c:\\Users\\Lyu\\AppData\\Roaming\\npm\\node_modules\\hexo\\bin\\hexo server"
+os: Windows_NT 6.1.7601 win32 x64
+versions:
+  http_parser: "1.0"
+  node: 0.10.28
   v8: 3.14.5.9
   ares: 1.9.0-DEV
-  uv: 0.10.23
+  uv: 0.10.27
   zlib: 1.2.3
-  modules: 11
-  openssl: 1.0.1e
+  modules: "11"
+  openssl: 1.0.1g
+  hexo: 2.8.0
 ---
-
-[debug] 23:56:46.191 Configuration file load successfully
-[debug] 23:56:46.196 Version info checked successfully
-[debug] 23:56:46.253 Loading database.
-[debug] 23:56:46.327 Plugin loaded successfully: hexo-generator-feed
-[debug] 23:56:46.352 Plugin loaded successfully: hexo-generator-sitemap
-[debug] 23:56:46.357 Script load successfully: fancybox.js
-[debug] 23:56:46.383 Theme layout loaded
-[debug] 23:56:46.402 Theme configuration loaded
-[debug] 23:56:46.438 Theme source loaded
-[debug] 23:56:46.440 Processed: CNAME
-[debug] 23:56:46.450 Theme language files loaded
-[debug] 23:56:46.488 Processed: about/index.md
-[debug] 23:56:46.495 Processed: _posts/vagrant-using.md
-[debug] 23:56:46.504 Cache saved
-[info] 23:56:46.599 Hexo is running at localhost:4000/. Press Ctrl+C to stop.
-[debug] 23:57:06.949 Render post: 2014/03/28/vagrant-using/
-[error] 00:00:46.818 Error: watch ENOENT
-Error: watch ENOENT
-    at errnoException (fs.js:1019:11)
-    at FSWatcher.start (fs.js:1051:11)
-    at Object.fs.watch (fs.js:1076:11)
-    at EventEmitter.FSWatcher._watch (c:\Users\Saber\AppData\Roaming\npm\node_modules\hexo\node_modules\chokidar\index.js:250:18)
-    at EventEmitter.FSWatcher._handleFile (c:\Users\Saber\AppData\Roaming\npm\node_modules\hexo\node_modules\chokidar\index.js:270:8)
-    at c:\Users\Saber\AppData\Roaming\npm\node_modules\hexo\node_modules\chokidar\index.js:356:15
-    at Object.oncomplete (fs.js:107:15)
-
-[update] 00:00:46.843 Theme: layout\_partial\post\footer.ejs
-[delete] 00:00:46.858 Theme: layout\_partial\post\.sublf49.tmp
-[update] 00:00:46.860 Theme: layout\_partial\post\footer.ejs
-[update] 00:00:46.862 Theme: layout\_partial\post\footer.ejs
+[debug] 11:59:24.275 Config file loaded from d:\personal\github\superalsrk.github.com\_config.yml[debug] 11:59:24.279 Version info checked successfully[debug] 11:59:24.413 Processed: draft.md (2ms)[debug] 11:59:24.413 Processed: photo.md (1ms)[debug] 11:59:24.415 Processed: page.md (4ms)[debug] 11:59:24.415 Processed: post.md (3ms)[debug] 11:59:24.433 Plugin loaded successfully: hexo-generator-feed[debug] 11:59:24.447 Plugin loaded successfully: hexo-generator-sitemap[debug] 11:59:24.452 Script load successfully: fancybox.js[debug] 11:59:24.496 Processed: CNAME (1ms)[debug] 11:59:24.497 Processed: about/index.md (1ms)[debug] 11:59:24.497 Processed: project/index.md (0ms)[debug] 11:59:24.529 Processed: source/img/author.png (1ms)[debug] 11:59:24.529 Processed: source/img/favicon.ico (0ms)[debug] 11:59:24.529 Processed: source/img/logo.png (0ms)[debug] 11:59:24.529 Processed: source/img/logo.svg (0ms)[debug] 11:59:24.530 Processed: source/img/scrollup.png (1ms)[debug] 11:59:24.530 Processed: source/font/FontAwesome.otf (0ms)[debug] 11:59:24.530 Processed: source/font/coveredbyyourgrace-webfont.eot (0ms)[debug] 11:59:24.531 Processed: source/font/coveredbyyourgrace-webfont.svg (1ms)[debug] 11:59:24.531 Processed: source/font/coveredbyyourgrace-webfont.woff (0ms)[debug] 11:59:24.531 Processed: source/font/fontawesome-webfont.eot (0ms)[debug] 11:59:24.532 Processed: source/font/fontawesome-webfont.svg (1ms)[debug] 11:59:24.532 Processed: source/font/fontawesome-webfont.ttf (0ms)[debug] 11:59:24.532 Processed: source/font/fontawesome-webfont.woff (0ms)[debug] 11:59:24.532 Processed: source/font/coveredbyyourgrace-webfont.ttf (0ms)[debug] 11:59:24.532 Processed: source/font/fontdiao.eot (0ms)[debug] 11:59:24.533 Processed: source/font/fontdiao.svg (1ms)[debug] 11:59:24.535 Processed: source/font/fontdiao.ttf (2ms)[debug] 11:59:24.536 Processed: source/font/fontdiao.woff (1ms)[debug] 11:59:24.536 Processed: source/js/jquery-2.0.3.min.js (0ms)[debug] 11:59:24.536 Processed: source/js/totop.js (0ms)[debug] 11:59:24.536 Processed: source/css/style.styl (0ms)[debug] 11:59:24.537 Processed: source/css/_base/font.styl (1ms)[debug] 11:59:24.537 Processed: source/css/_base/code.styl (0ms)[debug] 11:59:24.537 Processed: source/css/_base/public.styl (0ms)[debug] 11:59:24.537 Processed: source/css/_base/variable.styl (0ms)[debug] 11:59:24.537 Processed: source/css/_partial/article.styl (0ms)[debug] 11:59:24.537 Processed: source/css/_partial/aside.styl (0ms)[debug] 11:59:24.537 Processed: source/css/_partial/duoshuo.styl (0ms)[debug] 11:59:24.537 Processed: source/css/_partial/footer.styl (0ms)[debug] 11:59:24.537 Processed: source/css/_partial/gallery.styl (0ms)[debug] 11:59:24.538 Processed: source/css/_partial/helper.styl (1ms)[debug] 11:59:24.538 Processed: source/css/_partial/header.styl (0ms)[debug] 11:59:24.538 Processed: source/css/_partial/index.styl (0ms)[debug] 11:59:24.538 Processed: source/css/_partial/totop.styl (0ms)[debug] 11:59:24.539 Processed: source/fancybox/blank.gif (1ms)[debug] 11:59:24.539 Processed: source/fancybox/fancybox_loading.gif (0ms)[debug] 11:59:24.539 Processed: source/fancybox/fancybox_overlay.png (0ms)[debug] 11:59:24.540 Processed: source/fancybox/fancybox_loading@2x.gif (1ms)[debug] 11:59:24.541 Processed: source/fancybox/fancybox_sprite.png (0ms)[debug] 11:59:24.541 Processed: source/fancybox/jquery.fancybox.css (0ms)[debug] 11:59:24.541 Processed: source/fancybox/fancybox_sprite@2x.png (0ms)[debug] 11:59:24.542 Processed: source/fancybox/jquery.fancybox.js (1ms)[debug] 11:59:24.542 Processed: source/fancybox/helpers/fancybox_buttons.png (0ms)[debug] 11:59:24.542 Processed: source/fancybox/jquery.fancybox.pack.js (0ms)[debug] 11:59:24.542 Processed: source/fancybox/helpers/jquery.fancybox-buttons.css (0ms)[debug] 11:59:24.543 Processed: source/fancybox/helpers/jquery.fancybox-buttons.js (1ms)[debug] 11:59:24.544 Processed: source/fancybox/helpers/jquery.fancybox-thumbs.css (1ms)[debug] 11:59:24.544 Processed: source/fancybox/helpers/jquery.fancybox-thumbs.js (0ms)[debug] 11:59:24.544 Processed: source/fancybox/helpers/jquery.fancybox-media.js (0ms)[debug] 11:59:24.551 Processed: layout/archive.ejs (29ms)[debug] 11:59:24.551 Processed: layout/category.ejs (28ms)[debug] 11:59:24.551 Processed: layout/index.ejs (28ms)[debug] 11:59:24.552 Processed: layout/layout.ejs (29ms)[debug] 11:59:24.552 Processed: layout/post.ejs (29ms)[debug] 11:59:24.552 Processed: layout/tag.ejs (29ms)[debug] 11:59:24.552 Processed: layout/page.ejs (29ms)[debug] 11:59:24.552 Processed: layout/_widget/archive.ejs (28ms)[debug] 11:59:24.552 Processed: layout/_widget/links.ejs (28ms)[debug] 11:59:24.552 Processed: layout/_widget/tag.ejs (28ms)[debug] 11:59:24.552 Processed: layout/_widget/category.ejs (28ms)[debug] 11:59:24.552 Processed: layout/_widget/rss.ejs (28ms)[debug] 11:59:24.552 Processed: layout/_widget/tagcloud.ejs (28ms)[debug] 11:59:24.552 Processed: layout/_widget/weibo.ejs (27ms)[debug] 11:59:24.552 Processed: layout/_partial/archive.ejs (27ms)[debug] 11:59:24.553 Processed: layout/_partial/after_footer.ejs (28ms)[debug] 11:59:24.553 Processed: layout/_partial/article.ejs (27ms)[debug] 11:59:24.553 Processed: layout/_partial/categories.ejs (27ms)[debug] 11:59:24.553 Processed: layout/_partial/article_row.ejs (27ms)[debug] 11:59:24.553 Processed: layout/_partial/head.ejs (27ms)[debug] 11:59:24.553 Processed: layout/_partial/google_analytics.ejs (27ms)[debug] 11:59:24.553 Processed: layout/_partial/footer.ejs (27ms)[debug] 11:59:24.553 Processed: layout/_partial/header.ejs (26ms)[debug] 11:59:24.553 Processed: layout/_partial/pagination.ejs (26ms)[debug] 11:59:24.554 Processed: layout/_partial/tags.ejs (27ms)[debug] 11:59:24.554 Processed: layout/_partial/totop.ejs (27ms)[debug] 11:59:24.554 Processed: layout/_partial/post/article.ejs (27ms)[debug] 11:59:24.554 Processed: layout/_partial/post/comment.ejs (27ms)[debug] 11:59:24.554 Processed: layout/_partial/post/catetags.ejs (26ms)[debug] 11:59:24.554 Processed: layout/_partial/post/gallery.ejs (26ms)[debug] 11:59:24.554 Processed: layout/_partial/post/header.ejs (26ms)[debug] 11:59:24.554 Processed: layout/_partial/post/footer.ejs (26ms)[debug] 11:59:24.554 Processed: layout/_partial/post/jiathis.ejs (26ms)[debug] 11:59:24.555 Processed: layout/_partial/post/pagination.ejs (27ms)[debug] 11:59:24.556 Processed: layout/_partial/sidebar.ejs (29ms)[debug] 11:59:24.559 Theme config loaded[debug] 11:59:24.559 Processed: _config.yml (38ms)[error] 11:59:24.561 { name: 'HexoError',
+  reason: 'incomplete explicit mapping pair; a key node is missed',
+  mark: 
+   { name: null,
+     buffer: 'categories: Categories\nsearch: Search\ntags: Tags\ntagcloud: Tag Cloud\nprev: Prev\nnext: Next\ncomment: Comments\ncontents: Contents\narchive_a: Archives\narchive_b: Archives: %s\npage: Page %d\nrecent_posts: Recent Posts\nmenu: Menu\nlinks: Links\nrss: RSS\nshowsidebar: Show Sidebar\nhidesidebar: Hide Sidebar\nupdated: Updated\n\u0000',
+     position: 167,
+     line: 9,
+     column: 19 },
+  message: 'Process failed: languages/default.yml',
+  domain: 
+   { domain: null,
+     _events: { error: [Function] },
+     _maxListeners: 10,
+     members: [ [Object] ] },
+  domainThrown: true,
+  stack: undefined }[debug] 11:59:24.578 Processed: languages/zh-CN.yml (56ms)[debug] 11:59:24.580 Processed: languages/zh-TW.yml (58ms)
