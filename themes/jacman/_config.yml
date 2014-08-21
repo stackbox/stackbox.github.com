@@ -65,7 +65,7 @@ totop: true
 #### Author information
 author:
   google_plus:    ## eg:116338260303228776998 for https://plus.google.com/u/0/116338260303228776998
-  intro_line1: "Hello,I'm Stackbox. For now I'm a Java Web Engineer in Xi'an." ## eg: "Hello ,I'm Larry Page in Google."
+  intro_line1: "Hello,I'm Stackbox. For now I'm a Java Web Engineer in Beijing." ## eg: "Hello ,I'm Larry Page in Google."
   intro_line2: "Less is more,simple is beauty" ## eg: "This is my blog,believe it or not."
   weibo: omoika     ## e.g. 436062867 for http://weibo.com/436062867
   twitter:    ## e.g. yangjiansky for https://twitter.com/yangjiansky
@@ -74,7 +74,7 @@ author:
   stackoverflow:  ##3222790   ##e.g. 3222790 for http://stackoverflow.com/users/3222790/jark
   douban: superalsrk    ##e.g. wuchong1014 or your id for https://www.douban.com/people/wuchong1014
   tsina: 1684941721     ## e.g. 1664838973  Your weibo ID,It will be used in share button.
-  email: saber@stackbox.org   ##email
+  email: superalsrk@gmail.com  ##email
 
 #### Comment
 duoshuo: 
@@ -89,7 +89,7 @@ jiathis:
 
 #### Analytics
 google_analytics:
-  enable: true
+  enable: false
   id:   UA-40261316-1  ## e.g. UA-46321946-2 your google analytics ID.
   site: stackbox.org     ## e.g. wuchong.me your google analytics site or set the value as auto.
 ## You MUST upgrade to Universal Analytics first!
