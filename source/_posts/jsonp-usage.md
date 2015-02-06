@@ -1,6 +1,8 @@
 title: 'jsonp使用'
 date: 2014-06-21 17:16:00
 tags: ['jsonp','javascript']
+description: "jsonp,解决跨域问题,jsonp原理，CORS"
+keywords: "jsonp,解决跨域问题,jsonp原理，CORS"
 ---
 
 首先，需要明确记住的是，jsonp不是ajax的一种特例，而是使用动态script来获取数据的一种方式。

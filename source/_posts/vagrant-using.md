@@ -1,6 +1,8 @@
 title: vagrant虚拟机使用
 date: 2014-03-28 09:46:55
 tags: ['工具']
+description: "agrant,vagrant配置,vagrant目录映射"
+keywords: "vagrant,vagrant配置,vagrant目录映射"
 ---
 
 ## Vagrant 虚拟机使用 ##

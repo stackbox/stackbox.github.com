@@ -1,6 +1,8 @@
 title: 基于CAS的单点登录学习
 date: 2014-11-10 16:11:52
-tags: ['CAS','SSO','spring','java']
+tags: ['CAS']
+description: "cas协议"
+keywords: "cas协议"
 ---
 
 目前一般使用般用jasgi-CAS来实现SSO
@@ -13,5 +15,3 @@ tags: ['CAS','SSO','spring','java']
 
 ![](/image/cas/proxy-web-flow.jpg)
 
-
-我自己对cas基础模式的实现： https://github.com/superalsrk/EasyCas

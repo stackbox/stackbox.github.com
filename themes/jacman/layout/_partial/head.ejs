@@ -20,6 +20,7 @@
   }
   %>
     <title><% if (title){ %><%= title %> | <% } %><%= config.headtitle %></title>
+    <meta name="application-name" content="叠搭宝箱">
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     <% if (config.author){ %>
     <meta name="author" content="<%= config.author %>"><% } %>
@@ -31,8 +32,14 @@
     <meta name="description" content="<%= strip_html(page.excerpt).replace(/^\s*/, '').replace(/\s*$/, '') %>">
     <% } else if (page.content){ %>
     <meta name="description" content="<%= strip_html(page.content).replace(/^\s*/, '').replace(/\s*$/, '').substring(0, 150) %>">
+    <% } else { %>
+    <meta name="description" content="关注Golang,scala,java与大数据(hadoop1,haoop2,spark),">
     <% } %>
-    <% if (page.keywords){ %><meta name="keywords" content="<%= page.keywords %>"><% } %>
+    <% if (page.keywords){ %><meta name="keywords" content="<%= page.keywords %>">
+    <% } else { %>
+       <meta name="keywords" content="github,golang,java,Hadoop,Spark,mllib">
+    <% } %>
+
     <% if (theme.author.twitter){ %>
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="<%= theme.author.twitter %>" />

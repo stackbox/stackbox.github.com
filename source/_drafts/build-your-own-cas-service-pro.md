@@ -1,8 +1,7 @@
-title: buld your own cas service 2
-date: 2015-01-06 13:21:32
-tags: []
+title: Build Your Own Cas Service - Pro 
+date: 2015-01-06 13:21:17
+tags: ['CAS','SSO']
 ---
-
 
 
 

@@ -14,9 +14,10 @@ menu:
 #### Widgets
 widgets: 
 - category
-- tag
+- tagcloud
 - links
 - rss
+
 ## provide six widgets:category,tag,rss,archive,tagcloud,links.
 ## modify links in `/layout/_widget/links.ejs`.
 
@@ -65,7 +66,7 @@ totop: true
 #### Author information
 author:
   google_plus:    ## eg:116338260303228776998 for https://plus.google.com/u/0/116338260303228776998
-  intro_line1: "Hello,I'm Stackbox. For now I'm a Java Web Engineer in Beijing." ## eg: "Hello ,I'm Larry Page in Google."
+  intro_line1: "Hello,I'm SRK.Lyu. For now I'm a Web Engineer in MiaozhenSystems." ## eg: "Hello ,I'm Larry Page in Google."
   intro_line2: "Less is more,simple is beauty" ## eg: "This is my blog,believe it or not."
   weibo: omoika     ## e.g. 436062867 for http://weibo.com/436062867
   twitter:    ## e.g. yangjiansky for https://twitter.com/yangjiansky

@@ -1,6 +1,8 @@
 title: 一个javascript库的构建
 date: 2014-12-17 20:38:24
 tags: ['javascript','patterns']
+description: "js模式,javascript模版,javascript设计模式"
+keywords: "js模式,javascript模版,javascript设计模式"
 ---
 编写js/jQuery插件有一些约定俗成的套路，根据这些套路依葫芦画瓢，代码的结构上就不会出现太大的问题了，特别推荐这个叫 [javascript-patterns](https://github.com/shichuan/javascript-patterns/) 的项目,一些demo让我收获良多。
 

@@ -1,6 +1,8 @@
 title: 利用Nexus和Shell进行自动化部署
 date: 2014-12-01 16:50:54
 tags: ['maven','运维']
+description: "maven,nexus,maven自动部署"
+keywords: "maven,nexus,maven自动部署"
 ---
 
 项目部署工作是一个很无聊，很费时，但又十分重要的工作，记得在飞饭的时候，由于项目并没有采用maven构建，以及项目包含了
