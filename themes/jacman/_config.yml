@@ -80,7 +80,7 @@ author:
 #### Comment
 duoshuo: 
   enable: false  ## duoshuo.com
-  short_name: wuchong   ## duoshuo short name.
+  short_name:    ## duoshuo short name.
 
 #### Share button
 jiathis:

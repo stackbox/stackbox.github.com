@@ -9,6 +9,7 @@ I'm SRK.Lyu, a web engineer in MiaozhenSystems, Find me via [Github](http://www.
 ###Computer Foundation###
 
 ###Tools###
+[vagrant使用](http://stackbox.org/2014/03/vagrant-using/)
 
 ###Theoretical Research###
 [计算广告学](计算广告学)

@@ -7,7 +7,7 @@ keywords: "vagrant,vagrant配置,vagrant目录映射"
 
 ## Vagrant 虚拟机使用 ##
 
-vagrant 是一款基于virtualbox的虚拟开发环境的工具，个人感觉风格上类似于docker,
+vagrant 是一款基于virtualbox的虚拟开发环境的工具，虽然现在docker用的比较多,
 不过有国外大牛做出了这个[vagrant-docker](https://github.com/philspitler/vagrant-docker)项目,provider由virtualbox替换成了docker.
 
 ## 安装 ##
