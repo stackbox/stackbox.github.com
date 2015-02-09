@@ -4,3 +4,16 @@ tags: ["广告学"]
 description: "并发模型,actor,routine,thread"
 keywords: "并发模型,actor,routine,thread"
 ---
+
+http://www.zhihu.com/question/21461752
+
+##基于状态共享的并发
+
+##基于消息传递的并发
+
+
+###Actor模型
+
+
+###CSP模型
+
