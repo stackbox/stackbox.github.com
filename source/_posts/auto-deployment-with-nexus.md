@@ -1,7 +1,7 @@
 title: 利用Nexus和Shell进行自动化部署
 date: 2014-12-01 16:50:54
 tags: ['maven','运维']
-description: "maven,nexus,maven自动部署"
+description: "通过使用nexus进行java web项目的部署"
 keywords: "maven,nexus,maven自动部署"
 ---
 

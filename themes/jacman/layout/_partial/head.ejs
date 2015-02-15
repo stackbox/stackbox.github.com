@@ -33,11 +33,11 @@
     <% } else if (page.content){ %>
     <meta name="description" content="<%= strip_html(page.content).replace(/^\s*/, '').replace(/\s*$/, '').substring(0, 150) %>">
     <% } else { %>
-    <meta name="description" content="关注Golang,scala,java与大数据(hadoop1,haoop2,spark),">
+    <meta name="description" content="一些关于spark,hadoop以及web网络编程的感想和笔记">
     <% } %>
     <% if (page.keywords){ %><meta name="keywords" content="<%= page.keywords %>">
     <% } else { %>
-       <meta name="keywords" content="github,golang,java,Hadoop,Spark,mllib">
+       <meta name="keywords" content="github,rust,java,Hadoop,Spark,mllib">
     <% } %>
 
     <% if (theme.author.twitter){ %>

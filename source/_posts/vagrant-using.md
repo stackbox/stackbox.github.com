@@ -1,14 +1,14 @@
 title: vagrant虚拟机使用
 date: 2014-03-28 09:46:55
 tags: ['工具']
-description: "agrant,vagrant配置,vagrant目录映射"
+description: "vagrant是一个用于创建和部署虚拟化开发环境,这篇文章是vagrant的使用教程及一些tips"
 keywords: "vagrant,vagrant配置,vagrant目录映射"
 ---
 
 ## Vagrant 虚拟机使用 ##
 
-vagrant 是一款基于virtualbox的虚拟开发环境的工具，虽然现在docker用的比较多,
-不过有国外大牛做出了这个[vagrant-docker](https://github.com/philspitler/vagrant-docker)项目,provider由virtualbox替换成了docker.
+vagrant 是一款用于创建和部署虚拟化开发环境，一般都是用virtualbox做provider的，不过也可以使用其他虚拟机,比如vmware和docker,
+有国外大牛做出了这个[vagrant-docker](https://github.com/philspitler/vagrant-docker)项目,就是使用docker作为provider.
 
 ## 安装 ##
 + 安装 [VirtualBox-4.3.6-91406-Win.exe](http://download.virtualbox.org/virtualbox/4.3.6/VirtualBox-4.3.6-91406-Win.exe) 
@@ -24,10 +24,9 @@ $ vagrant box add lucid32 ./lucid32.box
 
 + 创建内容如下的 `Vagrantfile` 文件
 
-<!-- more --> 
 ```ruby
-# -*- mode: ruby -*-
-# vi: set ft=ruby :
+  # -*- mode: ruby -*-
+  # vi: set ft=ruby :
 
   # Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
   VAGRANTFILE_API_VERSION = "2"

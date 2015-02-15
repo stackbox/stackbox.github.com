@@ -1,7 +1,7 @@
 title: 'jsonp使用'
 date: 2014-06-21 17:16:00
-tags: ['jsonp','javascript']
-description: "jsonp,解决跨域问题,jsonp原理，CORS"
+tags: ['javascript']
+description: "使用jsonp解决跨域问题"
 keywords: "jsonp,解决跨域问题,jsonp原理，CORS"
 ---
 
