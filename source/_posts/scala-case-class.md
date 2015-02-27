@@ -1,7 +1,8 @@
 ---
+
 title: Scala笔记 -- 样本类(Case Class)
 date: 2015-02-13 00:51:14
-tags: ['scala']
+tags: ['语言']
 description: "scala"
 categories: "Scala笔记"
 keywords: "scala"

@@ -2,7 +2,7 @@
 
 title: 关于Shell的一些东西
 date: 2015-01-06 13:22:17
-tags: ["Shell"]
+tags: ["运维"]
 description: "在工作中经常用到的Command&Shell"
 keywords: ""
 ---

@@ -1,6 +1,8 @@
+---
+
 title: 基于CAS的单点登录学习
 date: 2014-11-10 16:11:52
-tags: ['CAS']
+tags: ['工具']
 description: "cas协议的原理及时序图"
 keywords: "cas协议"
 ---

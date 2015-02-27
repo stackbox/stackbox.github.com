@@ -20,7 +20,7 @@ Here is a collection of my post.
 [Chord算法](/2015/02/chord-algorithm/)
 
 ##Others
-[计算广告学 - 基础概念]()
-[计算广告学 - 几种产品形态]()
-[计算广告学 - 广告交易系统]()
-[计算广告学 - 竞价广告系统]()
+[计算广告学 - 基础概念](/2015/02/computational-advertising0/)
+[计算广告学 - 常用广告技术](/2015/02/computational-advertising1/)
+[计算广告学 - 广告交易系统](/2015/02/computational-advertising2/)
+[计算广告学 - 竞价广告系统](/2015/02/computational-advertising3/)

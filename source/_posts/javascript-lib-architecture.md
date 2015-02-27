@@ -1,6 +1,8 @@
+---
+
 title: 一个javascript库的构建
 date: 2014-12-17 20:38:24
-tags: ['javascript','patterns']
+tags: ['前端']
 description: "在写js的时候一般都会有一些固定的模式,实现一个Library的时候同样如此"
 keywords: "js模式,javascript模版,javascript设计模式"
 ---

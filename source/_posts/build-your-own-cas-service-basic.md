@@ -1,6 +1,8 @@
+---
+
 title: Build Your Own Cas Service - Basic
 date: 2015-01-06 13:21:16
-tags: ['CAS']
+tags: ['工具']
 description: "JASIG-CAS基础配置,以及对几个核心接口的分析"
 keywords: "cas原理,cas源码分析,cas部署, cas无https配置"
 ---
