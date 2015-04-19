@@ -8,6 +8,7 @@ keywords: "cas原理,cas源码分析,cas部署, cas无https配置"
 ---
 ##预备知识
 具体的CAS协议见, [CAS Protocal](http://stackbox.org/2014/11/SSO-learning/),接下来我们讲jasig的CAS Implementation的几个重要的点，以下所有描述都基于版本 [3.5.2.1](http://mvnrepository.com/artifact/org.jasig.cas/cas-server-core/3.5.2.1)
+<!--more-->
 
 JASIG有以下几个比较重要的接口
 

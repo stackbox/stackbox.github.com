@@ -3,13 +3,14 @@
 title: Chord算法
 date: 2015-02-10 00:53:31
 tags: ['算法','分布式']
-description: "在分布式计算中,如何快速查找存储有某段数据的节点是最核心的问题之一,Chord算法就是解决此类问题的方法之一"
+description: "一种P2P查找算法"
 keywords: "Chord,分布式查找算法"
 mathjax: true
 ---
 
 在分布式计算中,如何快速查找存储有某段数据的节点是最核心的问题之一,Chord算法就是解决此类问题的方法之一
 
+<!--more-->
 ##基本概念
 
 ###覆盖网络(overlaynetwork)###

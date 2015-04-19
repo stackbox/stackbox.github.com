@@ -8,6 +8,7 @@ keywords: "cas自定义登陆,cas自定义Credentials,cas修改页面,cas单点�
 ---
 示例代码: https://github.com/superalsrk/modify-jasig-cas ,以下所有描述都基于版本 [3.5.2.1](http://mvnrepository.com/artifact/org.jasig.cas/cas-server-core/3.5.2.1)
 
+<!--more-->
 
 ##Generally Design
 我们可以把一个war项目作为dependency，然后创建一个web项目webapp，然后只要将创建项目的 web.xml 和 index.jsp 去掉, 整个项目就能跑了。

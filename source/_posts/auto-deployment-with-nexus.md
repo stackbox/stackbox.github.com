@@ -13,6 +13,8 @@ keywords: "maven,nexus,maven自动部署"
 实际在运维的时候，稍微麻烦的项目可以采用jenkins，bamboo，puppet，不过由于目前dashboard还算一个很小的项目，
 就采用了shell＋nexus仓库的方式进行部署。
 
+<!--more-->
+
 思路如下：
 1. `mvn deploy` 发布war包到nexus
 2.  调用nexus的接口获取某个版本的war包
