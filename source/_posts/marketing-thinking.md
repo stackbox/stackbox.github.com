@@ -1,6 +1,6 @@
 title: 某可视化产品交流心得
 date: 2015-03-24 19:44:25
-tags: ["Marketing","产品"]
+tags: ["产品"]
 description: "设计一个可视化产品的思路"
 keywords: "数据可视化,需求,产品"
 ---

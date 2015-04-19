@@ -15,3 +15,11 @@ date: 2014-08-10 12:33:39
 可以通过 [Github](http://www.github.com/superalsrk) 或者 [豆瓣](http://www.douban.com/people/superalsrk/) 找到我,欢迎互粉～～
 
 
+# Deck
+
++ [浏览器漫谈](http://stackbox.org/deck/browser-overview)
++ [MEAN简易教程](http://stackbox.org/deck/mean-tutorial)  ([视频]())
++ [使用flux+react构建web应用](http://stackbox.org/deck/react-with-flux) ([视频]())
+
+
+
