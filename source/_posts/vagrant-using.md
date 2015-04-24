@@ -5,6 +5,7 @@ date: 2014-03-28 09:46:55
 tags: ['工具']
 description: "vagrant是一个用于创建和部署虚拟化开发环境,这篇文章是vagrant的使用教程及一些tips"
 keywords: "vagrant,vagrant配置,vagrant目录映射"
+toc: true
 ---
 
 ## Vagrant 虚拟机使用 ##
