@@ -18,5 +18,8 @@ date: 2014-08-10 12:33:39
 + [浏览器漫谈](http://laosiji.org/deck/browser-overview)
 
 # Tutorial
-+ [Express.js教程-基础概念(视频)](/express-tutorial1)
-+ [Express.js教程-登陆注册(视频)](/express-tutorial2)
++ [Express.js教程-基础部分(视频)](/2015/04/express-tutorial-1/)
++ [Express.js教程-MVC(视频)](/2015/04/express-tutorial-2/)
++ [Express.js教程-登陆注册(视频)](/2015/04/express-tutorial-3/)
++ [Express.js教程-Feed抓取(视频)](/2015/04/express-tutorial-4/)
++ [Express.js教程-内容展示(视频)](/2015/04/express-tutorial-5/)
