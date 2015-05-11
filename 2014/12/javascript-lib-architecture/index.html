@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>一个javascript库的构建 | 叠搭宝箱</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="在写js的时候一般都会有一些固定的模式,实现一个Library的时候同样如此">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一个javascript库的构建">
+<meta property="og:url" content="http://stackbox.org/2014/12/javascript-lib-architecture/">
+<meta property="og:site_name" content="叠搭宝箱">
+<meta property="og:description" content="在写js的时候一般都会有一些固定的模式,实现一个Library的时候同样如此">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="一个javascript库的构建">
+<meta name="twitter:description" content="在写js的时候一般都会有一些固定的模式,实现一个Library的时候同样如此">
+
+  
+    <link rel="alternative" href="/atom.xml" title="叠搭宝箱" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico?v=1">
+  
+  <link href="//fonts.useso.com//css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">叠搭宝箱</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+
+          <a class="main-nav-link" href="http://wiki.stackbox.org" target="_blank">Wiki</a>
+          <a class="main-nav-link" href="/about">About</a>
+
+      </nav>
+      <nav id="sub-nav">
+
+        <a id="nav-weibo-link" class="nav-icon" title="Weibo" target="_blank" href="http://weibo.com/omoika"></a>
+
+        <a id="nav-github-link" class="nav-icon" title="GitHub" target="_blank" href="http://github.com/superalsrk"></a>
+
+
+        <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://stackbox.org"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-javascript-lib-architecture" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/12/javascript-lib-architecture/" class="article-date">
+  <time datetime="2014-12-17T12:38:24.000Z" itemprop="datePublished">Dec 17 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      一个javascript库的构建
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+
+      
+      
+        <!-- Table of Contents -->
+        
+          <div id="toc" class="toc-article">
+            <strong class="toc-title">文章目录</strong>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本结构"><span class="toc-number">1.</span> <span class="toc-text">基本结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#普通的库"><span class="toc-number">1.1.</span> <span class="toc-text">普通的库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jQuery_插件"><span class="toc-number">1.2.</span> <span class="toc-text">jQuery 插件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内部组织"><span class="toc-number">2.</span> <span class="toc-text">内部组织</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#初始化"><span class="toc-number">2.1.</span> <span class="toc-text">初始化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#i18n与配置管理"><span class="toc-number">2.2.</span> <span class="toc-text">i18n与配置管理</span></a></li></ol></li></ol>
+          </div>
+        
+
+        <p>编写js/jQuery插件有一些约定俗成的套路，根据这些套路依葫芦画瓢，代码的结构上就不会出现太大的问题了，特别推荐这个叫 <a href="https://github.com/shichuan/javascript-patterns/" target="_blank" rel="external">javascript-patterns</a> 的项目,一些demo让我收获良多。</p>
+<h2 id="基本结构">基本结构</h2>
+<h3 id="普通的库">普通的库</h3>
+<p>用最基本的匿名函数实现即可</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>{</div><div class="line">	<span class="keyword">var</span> root = <span class="keyword">this</span>;</div><div class="line">	root.YOURLIB = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{</div><div class="line">		FUNC1 : <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{},</div><div class="line">		FUNC2 : <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{}</div><div class="line">	}</div><div class="line">}())</div></pre></td></tr></table></figure>
+
+<p>也可以使用<code>call</code>而不是使用闭包，此时两种写法等效，<strong>undersocre.js</strong>用的是call写法</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>{</div><div class="line">	<span class="keyword">var</span> root = <span class="keyword">this</span>;</div><div class="line">	root.YOURLIB = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{</div><div class="line">		FUNC1 : <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{},</div><div class="line">		FUNC2 : <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{}</div><div class="line">	}</div><div class="line">}.call(<span class="keyword">this</span>))</div></pre></td></tr></table></figure>
+
+<h3 id="jQuery_插件">jQuery 插件</h3>
+<p>通过一下方法可以使的插件可以 跨CMD/AMD/Browser</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> <span class="params">(factory)</span> </span>{</div><div class="line">	<span class="keyword">if</span> (<span class="keyword">typeof</span> define === <span class="string">'function'</span> && define.amd) {</div><div class="line">		<span class="comment">// AMD</span></div><div class="line">		define([<span class="string">'jquery'</span>], factory);</div><div class="line">	} <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> exports === <span class="string">'object'</span>) {</div><div class="line">		<span class="comment">// CommonJS</span></div><div class="line">		factory(<span class="built_in">require</span>(<span class="string">'jquery'</span>));</div><div class="line">	} <span class="keyword">else</span> {</div><div class="line">		<span class="comment">// Browser globals</span></div><div class="line">		factory(jQuery);</div><div class="line">	}</div><div class="line">}(<span class="function"><span class="keyword">function</span> <span class="params">($)</span> </span>{</div><div class="line"></div><div class="line">	$.fn.render = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{}</div><div class="line">	$.render2 = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{}</div><div class="line">}))</div></pre></td></tr></table></figure>
+
+<p>当然,如果不考虑Seajs,RequireJS的话,最方便的还是使用匿名函数，然后把window.jQuery当成参数传进去</p>
+<h2 id="内部组织">内部组织</h2>
+<p>我们以 <a href="https://github.com/silviomoreto/bootstrap-select/blob/master/js/bootstrap-select.js" target="_blank" rel="external">bootstrap-select v1.6.3</a>,<a href="https://github.com/cferdinandi/smooth-scroll" target="_blank" rel="external">smooth-scroll</a>这俩项目来进行分析，</p>
+<h3 id="初始化">初始化</h3>
+<p>一般的Library都会提供一套defaults配置文件，然后使用的时候和用户自定义的settings进行extend, <strong>smooth-scroll</strong>中的那种</p>
+<p><code>settings = extend(defaults, options ||{}));</code> 写法就相当赞，<em>可以以一种十分简单的方式防止空指针异常</em>。</p>
+<p>剩下的就是根据业务划分业务的funciton了，对于如何划分，只有多加练习了。</p>
+<p>另外，在注释里像写上 <strong>private</strong> 和 <strong>public</strong> 来区分对外接口和对内接口是个不错的习惯。</p>
+<h3 id="i18n与配置管理">i18n与配置管理</h3>
+<p>i18n是吧那些国际话的字符全都放到defautls，比较优雅的做法是defaults定义一个对象，这样国际化文件<br>便能和原有的库文件进行分离，具体参考 <a href="">bootstrap-datapicker</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://stackbox.org/2014/12/javascript-lib-architecture/" data-id="bmjln45q7yg4n0rf" class="article-share-link">Share</a>
+      
+        <a href="http://stackbox.org/2014/12/javascript-lib-architecture/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/01/build-your-own-cas-service-basic/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Build Your Own Cas Service - Basic
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/12/auto-deployment-with-nexus/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">利用Nexus和Shell进行自动化部署</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/视频教程/">视频教程</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Express-js/">Express.js</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/产品/">产品</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分布式/">分布式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件工程/">软件工程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/运维/">运维</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">LINKS</h3>
+    <div class="widget">
+      <ul>
+		<li><a href="http://wilbeibi.com" target="_blank" title="Gates of Janus">Gates of Janus</a></li>
+        <li><a href="http://uranux.com/" target="_blank" title="uranux">uranux小彬彬</a></li>
+        <li><a href="http://ouxijv.com/blog/" target="_blank" title="ouxijv's Blog">ouxijv's Blog</a></li>
+        <li><a href="http://zryfish.github.io/" target="_blank">知与谁同</a></li>
+	  </ul>
+    </div>
+</div>
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+
+
+    <div id="footer-info" class="inner">
+    
+
+    <div id="footer-info" class="inner">
+      书阁自锁 七曜圣贤 <br/>
+      &copy; 2015  <a href=""/>SRK.Lyu</a>  | |
+      <a href="/sitemap.xml">Sitemap</a><br>
+
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> | Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a> | Theme <a href="https://github.com/Nagland/hexo-theme-landscape-cn" target="_blank">landscape-cn</a>, by SRK.Lyu, based on Landscape.
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'srkbox';
+  
+  var disqus_url = 'http://stackbox.org/2014/12/javascript-lib-architecture/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"stackbox"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共JS代码 end -->
+
+  </div>
+</body>
+</html>

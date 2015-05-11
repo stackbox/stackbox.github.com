@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>maven大坑 | 叠搭宝箱</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Damn it,maven！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="maven大坑">
+<meta property="og:url" content="http://stackbox.org/2015/05/dammit-maven/">
+<meta property="og:site_name" content="叠搭宝箱">
+<meta property="og:description" content="Damn it,maven！">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="maven大坑">
+<meta name="twitter:description" content="Damn it,maven！">
+
+  
+    <link rel="alternative" href="/atom.xml" title="叠搭宝箱" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico?v=1">
+  
+  <link href="//fonts.useso.com//css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">叠搭宝箱</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+
+          <a class="main-nav-link" href="http://wiki.stackbox.org" target="_blank">Wiki</a>
+          <a class="main-nav-link" href="/about">About</a>
+
+      </nav>
+      <nav id="sub-nav">
+
+        <a id="nav-weibo-link" class="nav-icon" title="Weibo" target="_blank" href="http://weibo.com/omoika"></a>
+
+        <a id="nav-github-link" class="nav-icon" title="GitHub" target="_blank" href="http://github.com/superalsrk"></a>
+
+
+        <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://stackbox.org"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-dammit-maven" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/05/dammit-maven/" class="article-date">
+  <time datetime="2015-05-10T16:53:31.000Z" itemprop="datePublished">May 11 2015</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      maven大坑
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+
+      
+      
+        <!-- Table of Contents -->
+        
+          <div id="toc" class="toc-article">
+            <strong class="toc-title">文章目录</strong>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#乱码"><span class="toc-number">1.</span> <span class="toc-text">乱码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mybatis代理失效"><span class="toc-number">2.</span> <span class="toc-text">mybatis代理失效</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他"><span class="toc-number">3.</span> <span class="toc-text">其他</span></a></li></ol>
+          </div>
+        
+
+        <h2 id="乱码">乱码</h2>
+<p>再部署某产品的时候, 出现了诡异的编码错误,主要体现为:</p>
+<ul>
+<li>登陆提交的表单会自动加一串奇奇怪怪的乱码</li>
+<li>Constant变量中的中文在当成message放在json中也会出现乱码</li>
+</ul>
+<p>一开始我以为是Linux的Locale环境变量引起的,但是改之依然没有效果,而从上面的那个第二条大致可以<br>猜出是文件编译的时候把encoding搞乱了。因为@FanFan童鞋用直接eclipse的export导出的war是可用的,那就是说打包的时候错误了。</p>
+<p>最后的解决方法是: <strong> pom.xml配置编码方式 </strong></p>
+<p>先配置:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">properties</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">project.build.sourceEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="title">project.build.sourceEncoding</span>&gt;</span> </div><div class="line"><span class="tag">&lt;/<span class="title">properties</span>&gt;</span></div></pre></td></tr></table></figure>
+
+<p>然后再配置 maven-compiler-plugin</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">plugin</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">groupId</span>&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/<span class="title">groupId</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">artifactId</span>&gt;</span>maven-compiler-plugin<span class="tag">&lt;/<span class="title">artifactId</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">version</span>&gt;</span>3.1<span class="tag">&lt;/<span class="title">version</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">configuration</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="title">source</span>&gt;</span>1.7<span class="tag">&lt;/<span class="title">source</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="title">target</span>&gt;</span>1.7<span class="tag">&lt;/<span class="title">target</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="title">encoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="title">encoding</span>&gt;</span> </div><div class="line">        <span class="tag">&lt;/<span class="title">configuration</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">plugin</span>&gt;</span></div></pre></td></tr></table></figure>
+
+<h2 id="mybatis代理失效">mybatis代理失效</h2>
+<p>这个问题找的比较快,因为mybatis是通过动态代理模式来实现DAO接口的, 一看到CGLib失败就知道接口的代理出现了问题。<br>果不其然，在编译的结果里没有找到mybatis的xml。</p>
+<p>好吧，项目的先人把XML放到了 <code>src/main/java</code> 下, 而默认会忽略掉这个文件夹下的配置文件的。而且先人还是通过eclipse-&gt;export导出war包的，所以就没有发现这个问题。</p>
+<p>解决方法:</p>
+<ul>
+<li>比较暴力的方法是把xml,properties 都放到<code>src/main/resources</code>下</li>
+<li>本着较少改动的原则,给pom.xml添加如下配置</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"> <span class="tag">&lt;<span class="title">resources</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">resource</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">directory</span>&gt;</span>src/main/resources<span class="tag">&lt;/<span class="title">directory</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">filtering</span>&gt;</span>true<span class="tag">&lt;/<span class="title">filtering</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="title">resource</span>&gt;</span></div><div class="line">    </div><div class="line">    <span class="tag">&lt;<span class="title">resource</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">directory</span>&gt;</span>src/main/java<span class="tag">&lt;/<span class="title">directory</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">filtering</span>&gt;</span>true<span class="tag">&lt;/<span class="title">filtering</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="title">resource</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">resources</span>&gt;</span></div></pre></td></tr></table></figure>
+
+<h2 id="其他">其他</h2>
+<p>配xml不能随便，不能随便</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://stackbox.org/2015/05/dammit-maven/" data-id="rn0xdx41ka86122s" class="article-share-link">Share</a>
+      
+        <a href="http://stackbox.org/2015/05/dammit-maven/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/软件工程/">软件工程</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/04/express-tutorial-2/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">002-Express.js教程-常用软件</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/视频教程/">视频教程</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Express-js/">Express.js</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/产品/">产品</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分布式/">分布式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件工程/">软件工程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/运维/">运维</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">LINKS</h3>
+    <div class="widget">
+      <ul>
+		<li><a href="http://wilbeibi.com" target="_blank" title="Gates of Janus">Gates of Janus</a></li>
+        <li><a href="http://uranux.com/" target="_blank" title="uranux">uranux小彬彬</a></li>
+        <li><a href="http://ouxijv.com/blog/" target="_blank" title="ouxijv's Blog">ouxijv's Blog</a></li>
+        <li><a href="http://zryfish.github.io/" target="_blank">知与谁同</a></li>
+	  </ul>
+    </div>
+</div>
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+
+
+    <div id="footer-info" class="inner">
+    
+
+    <div id="footer-info" class="inner">
+      书阁自锁 七曜圣贤 <br/>
+      &copy; 2015  <a href=""/>SRK.Lyu</a>  | |
+      <a href="/sitemap.xml">Sitemap</a><br>
+
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> | Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a> | Theme <a href="https://github.com/Nagland/hexo-theme-landscape-cn" target="_blank">landscape-cn</a>, by SRK.Lyu, based on Landscape.
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'srkbox';
+  
+  var disqus_url = 'http://stackbox.org/2015/05/dammit-maven/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"stackbox"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共JS代码 end -->
+
+  </div>
+</body>
+</html>

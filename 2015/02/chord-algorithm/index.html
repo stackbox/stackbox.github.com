@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Chord算法 | 叠搭宝箱</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一种P2P查找算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Chord算法">
+<meta property="og:url" content="http://stackbox.org/2015/02/chord-algorithm/">
+<meta property="og:site_name" content="叠搭宝箱">
+<meta property="og:description" content="一种P2P查找算法">
+<meta property="og:image" content="/image/chord/napster.png">
+<meta property="og:image" content="/image/chord/gnutella.png">
+<meta property="og:image" content="/image/chord/chord1.png">
+<meta property="og:image" content="/image/chord/chord2.png">
+<meta property="og:image" content="/image/chord/chord4.png">
+<meta property="og:image" content="/image/chord/chord6.png">
+<meta property="og:image" content="/image/chord/chord7.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chord算法">
+<meta name="twitter:description" content="一种P2P查找算法">
+
+  
+    <link rel="alternative" href="/atom.xml" title="叠搭宝箱" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico?v=1">
+  
+  <link href="//fonts.useso.com//css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">叠搭宝箱</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+
+          <a class="main-nav-link" href="http://wiki.stackbox.org" target="_blank">Wiki</a>
+          <a class="main-nav-link" href="/about">About</a>
+
+      </nav>
+      <nav id="sub-nav">
+
+        <a id="nav-weibo-link" class="nav-icon" title="Weibo" target="_blank" href="http://weibo.com/omoika"></a>
+
+        <a id="nav-github-link" class="nav-icon" title="GitHub" target="_blank" href="http://github.com/superalsrk"></a>
+
+
+        <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://stackbox.org"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-chord-algorithm" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/02/chord-algorithm/" class="article-date">
+  <time datetime="2015-02-09T16:53:31.000Z" itemprop="datePublished">Feb 10 2015</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Chord算法
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+
+      
+      
+        <!-- Table of Contents -->
+        
+
+        <p>在分布式计算中,如何快速查找存储有某段数据的节点是最核心的问题之一,Chord算法就是解决此类问题的方法之一</p>
+<p><a id="more"></a></p>
+<h2 id="基本概念">基本概念</h2>
+<h3 id="覆盖网络(overlaynetwork)">覆盖网络(overlaynetwork)</h3>
+<p>覆盖网络是这么一种网络:构建在其他网络之上、网络节点之间通过虚拟或逻辑连接在一起，比如云计算、分布式系统都是覆盖网络，因为其都构建于TCP/IP之上，且节点之间有联系。</p>
+<h3 id="结构化网络">结构化网络</h3>
+<p>传统的非结构化网络,节点与节点之间不存在组织关系,其查找算法一般有如下几种:</p>
+<ol>
+<li>Napster: 使用一个中心服务器处理所有的查询请求,中心服务器挂掉整个服务就挂掉了<br><img src="/image/chord/napster.png" alt=""></li>
+<li>Gnutella: 使用消息洪泛定位数据,查询消息发送到每个节点,一般会使用TTL来限制消息的转发次数,但是当网络规模<br>较大时网络负载会变大.<br><img src="/image/chord/gnutella.png" alt=""></li>
+<li>SN型: 即超级节点,和Napster时分类似,不过在整个网络中有多个中心节点,索引消息会在这些SN中进行传播,不过依然可能系统崩溃</li>
+</ol>
+<h3 id="DHT">DHT</h3>
+<h2 id="算法概述">算法概述</h2>
+<h3 id="Chord环构造">Chord环构造</h3>
+<ol>
+<li>假设存在一个最大容量为 $x_mu$  的环形网络,我们假设以K代表资源,N代表节点,ID表示抽象环形网络中的标识符<br><img src="/image/chord/chord1.png" alt=""></li>
+<li><strong>ID(Node) = hash(IP,Port)</strong>, 将Node散列在Chord环中,一般选用 hash-1算法<br><img src="/image/chord/chord2.png" alt=""> </li>
+<li>之后开始对资源节点进行散列 <strong>ID(Key) = hash(Key)</strong>,对于K1来说, ID(1)不仅是个标识符,而且有节点存在,所以K1就放在了ID(1)上<br><img src="/image/chord/chord4.png" alt=""></li>
+<li>对于K2来说,K2只是一个标识符,不存在节点,ID(2)的继承节点是ID(3),所以K2放在了ID(3)上<br><img src="/image/chord/chord6.png" alt=""></li>
+<li>同理,K6本应该在节点ID(6)上,但是ID(6)不存在节点且其继承节点是ID(0),所以K6放在了ID(0)上<br><img src="/image/chord/chord7.png" alt=""></li>
+</ol>
+<h3 id="Finger路由表">Finger路由表</h3>
+<h3 id="节点查找">节点查找</h3>
+<ol>
+<li>近似二分查找</li>
+<li>直到找到资源为止</li>
+</ol>
+<h3 id="节点加入">节点加入</h3>
+<ol>
+<li>加入某节点N(n)后,构造Finger路由表</li>
+<li>如果存在K(n),则将K(n)从其他节点转移到N(n)</li>
+<li>其他节点的Finger路由表中,如某节点的Successor为N(n)的Successor,则重新指向为N(n)</li>
+</ol>
+<h3 id="节点退出">节点退出</h3>
+<ol>
+<li>某节点N(n)退出时, 先将它所有的资源都转移到该节点的Successor中</li>
+<li>删除节点</li>
+<li>其他节点的Finger路由表中,若某节点的Successor为N(n),则重新指向为N(n)的Successor</li>
+</ol>
+<h3 id="节点失效">节点失效</h3>
+<h2 id="参考资料">参考资料</h2>
+<ol>
+<li><a href="http://www.yeolar.com/note/2010/04/06/p2p-chord/" target="_blank" rel="external">结构化P2P网络chord算法研究与分析</a></li>
+<li><a href="http://www.cs.berkeley.edu/~kubitron/courses/cs294-4-F03/slides/lec03-chord.ppt" target="_blank" rel="external">Chord slide of berkeley</a></li>
+<li><a href="http://pdos.csail.mit.edu/papers/chord:sigcomm01/chord_sigcomm.pdf" target="_blank" rel="external">Chord sigcomm</a></li>
+<li><a href="http://blog.csdn.net/chen77716/article/details/6059575" target="_blank" rel="external">Chord算法（原理）</a></li>
+<li><a href="http://blog.csdn.net/wangxiaoqin00007/article/details/7374833" target="_blank" rel="external">Chord算法详解</a></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://stackbox.org/2015/02/chord-algorithm/" data-id="yr2gqn3r0ibzuw11" class="article-share-link">Share</a>
+      
+        <a href="http://stackbox.org/2015/02/chord-algorithm/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/分布式/">分布式</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/03/marketing-thinking/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          某可视化产品交流心得
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/01/build-your-own-cas-service-pro/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Build Your Own Cas Service - Pro</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/视频教程/">视频教程</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Express-js/">Express.js</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/产品/">产品</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分布式/">分布式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件工程/">软件工程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/运维/">运维</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">LINKS</h3>
+    <div class="widget">
+      <ul>
+		<li><a href="http://wilbeibi.com" target="_blank" title="Gates of Janus">Gates of Janus</a></li>
+        <li><a href="http://uranux.com/" target="_blank" title="uranux">uranux小彬彬</a></li>
+        <li><a href="http://ouxijv.com/blog/" target="_blank" title="ouxijv's Blog">ouxijv's Blog</a></li>
+        <li><a href="http://zryfish.github.io/" target="_blank">知与谁同</a></li>
+	  </ul>
+    </div>
+</div>
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+
+
+    <div id="footer-info" class="inner">
+    
+
+    <div id="footer-info" class="inner">
+      书阁自锁 七曜圣贤 <br/>
+      &copy; 2015  <a href=""/>SRK.Lyu</a>  | |
+      <a href="/sitemap.xml">Sitemap</a><br>
+
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> | Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a> | Theme <a href="https://github.com/Nagland/hexo-theme-landscape-cn" target="_blank">landscape-cn</a>, by SRK.Lyu, based on Landscape.
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'srkbox';
+  
+  var disqus_url = 'http://stackbox.org/2015/02/chord-algorithm/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"stackbox"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共JS代码 end -->
+
+  </div>
+</body>
+</html>
